@@ -17,4 +17,4 @@ ENV POETRY_NO_INTERACTION=1 \
 WORKDIR /app
 EXPOSE 8501
 
-ENTRYPOINT bash -c "poetry install --only main && poetry update && poetry run streamlit run src/run.py"
+ENTRYPOINT bash -c "poetry install --only main && poetry run streamlit run src/run.py"
