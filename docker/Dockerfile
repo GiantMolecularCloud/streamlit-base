@@ -1,6 +1,6 @@
 FROM python:3.13-slim
 
-ARG POETRY_VERSION=2.1
+ARG POETRY_VERSION=2.3
 
 RUN pip install "poetry==${POETRY_VERSION}"
 
@@ -17,4 +17,4 @@ ENV POETRY_NO_INTERACTION=1 \
 WORKDIR /app
 EXPOSE 8501
 
-ENTRYPOINT bash -c "poetry install --only main && poetry run streamlit run src/run.py"
+ENTRYPOINT bash -c "poetry install --only main && poetry update && poetry run streamlit run src/run.py"
